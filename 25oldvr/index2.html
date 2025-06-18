@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
     <head>
-        <script defer src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-        <script defer src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-        <script defer src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script defer src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script defer src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
@@ -44,12 +44,12 @@
                     gesture-handler
                 ></a-entity>
             </a-nft>
-            <script>
+            <!-- <script>
                 let old_nft_url = document.querySelector('a-nft').getAttribute('url')
                 let current_absolute_path = window.location.pathname.replace(/\/[^\/]*\.[^\/]*$/, '').replace(/\/$/, '')
                 let nft_url = current_absolute_path + '/' + old_nft_url
                 document.querySelector('a-nft').setAttribute('url', nft_url)
-            </script>
+            </script> -->
 
             <a-entity camera></a-entity>
         </a-scene>
