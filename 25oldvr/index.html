@@ -18,12 +18,12 @@
             embedded
             gesture-detector
         >
-            <a-assets>
+            <!-- <a-assets>
                 <a-asset-item
                     id="animated-asset"
                     src="./assets/scene.glb"
                 ></a-asset-item>
-            </a-assets>
+            </a-assets> -->
 
             <a-marker
                 id="animated-marker"
@@ -40,7 +40,7 @@
                     scale="25.81676041194384 25.81676041194384 25.81676041194384"
                     position="0 -10 0"
                     animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
+                    gltf-model="./assets/scene.glb"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
