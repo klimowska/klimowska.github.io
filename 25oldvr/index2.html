@@ -44,8 +44,9 @@
                 ></a-entity>
             </a-nft>
             <script>
-                let nft_url = window.location.pathname.replace(/\/[^\/]*\.[^\/]*$/, '').replace(/\/$/, '')
-                // let nft_url = window.location.href.replace(/^https:\/\/[a-zA-Z0-9.]+/, '')
+                let old_nft_url = document.querySelector('a-nft').getAttribute('url')
+                let current_absolute_path = window.location.pathname.replace(/\/[^\/]*\.[^\/]*$/, '').replace(/\/$/, '')
+                let nft_url = current_absolute_path + '/' + old_nft_url
                 document.querySelector('a-nft').setAttribute('url', nft_url)
             </script>
 
