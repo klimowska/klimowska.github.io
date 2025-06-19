@@ -1,0 +1,12 @@
+@keyframes rotating {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    animation-name: rotating;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
