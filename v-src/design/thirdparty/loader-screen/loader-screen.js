@@ -1,4 +1,4 @@
-import { html, css, LitElement } from '/v-src/modules/lit-core.min.js';
+import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import '/v-src/design/components/loader/loader.js';
 
 export class LoaderScreen extends LitElement {
