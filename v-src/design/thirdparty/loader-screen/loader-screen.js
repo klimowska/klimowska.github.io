@@ -26,4 +26,4 @@ export class LoaderScreen extends LitElement {
     }
 }
 
-customElements.define('l-loader-screen', Loader);
+customElements.define('l-loader-screen', LoaderScreen);
