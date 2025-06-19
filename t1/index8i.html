@@ -1,6 +1,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.7.0/aframe.min.js"
   integrity="sha512-QRe0tMdbQUsh9BJOh+ijnsJaLoO68ku2a9/7HmQCIvqpeWRkqc4Ee0Ohjvt6y7Fx/ShFTLoL/H3ZgxZrXB7ERA==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/shared/loader.css" />
+<script type="module">import 'v-src/design/thirdparty/loader-screen/loader-screen.js'; </script>
 <style>
   .arjs-loader {
     height: 100%;
@@ -31,10 +32,11 @@
 
 <body style='margin : 0px; overflow: hidden;'>
    <!-- minimal loader shown until image descriptors are loaded -->
-  <div class="arjs-loader">
-    <image src="/shared/palette.svg" alt="loading" class="loader" />
+    <l-loader-screen />
+  <!-- <div class="arjs-loader">
+    <image src="/shared/palette.svg" alt="loading" class="loader" /> -->
     <!-- <div>Loading, please wait...</div> -->
-  </div>
+  <!-- </div> -->
     <a-scene
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true; precision: medium;"
