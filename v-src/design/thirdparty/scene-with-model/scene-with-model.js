@@ -6,7 +6,7 @@ import '/v-src/design/thirdparty/scene-with-model/arjs-nft.js';
 
 class SceneWithModel extends LitElement {
     static properties = {
-        nftUrl: { type: String },
+        nftFilestem: { type: String },
         modelUrl: { type: String },
         modelScale: { type: String },
         modelPosition: { type: String },
@@ -16,7 +16,7 @@ class SceneWithModel extends LitElement {
         return html`
             <l-arjs-loader-screen></l-arjs-loader-screen>
             <l-aframe-scene support-arjs>
-                <l-arjs-nft nft-url='${this.nftUrl}'>
+                <l-arjs-nft nft-url='${this.nftFilestem}'>
                     <l-aframe-model
                         model-url='${this.modelUrl}'
                         model-scale='${this.modelScale}'

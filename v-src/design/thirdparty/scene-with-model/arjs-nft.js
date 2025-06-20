@@ -6,7 +6,7 @@ import 'v-src/vendor/import-dompurify.js';
 
 class ArjsNft extends LitElement {
     static properties = {
-        nftUrl: { type: String },
+        nftFilestem: { type: String },
     };
 
     createRenderRoot() {
@@ -18,20 +18,20 @@ class ArjsNft extends LitElement {
         await importDOMPurify();
     }
 
-    get resolvedNftUrl() {
-        if (this.nftUrl.startsWith('/'))
-            return this.nftUrl;
+    get resolvedNftFilestem() {
+        if (this.nftFilestem.startsWith('/'))
+            return this.nftFilestem;
 
         const sanitizedPathname = 
             loggedValidate(window.location.pathname, /^\/[a-zA-Z0-9-/]+$/);
         return sanitizedPathname 
-            ? joinPaths(sanitizedPathname, this.nftUrl) 
+            ? joinPaths(sanitizedPathname, this.nftFilestem) 
             : '';
     }
 
     render() {
         return html`
-            <a-nft type='nft' url='${this.resolvedNftUrl}'>
+            <a-nft type='nft' url='${this.resolvedNftFilestem}'>
                 <slot></slot>
             </a-nft>
         `;
