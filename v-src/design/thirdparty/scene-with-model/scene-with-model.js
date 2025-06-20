@@ -16,7 +16,7 @@ export class SceneWithModel extends LitElement {
         return html`
             <l-arjs-loader-screen></l-arjs-loader-screen>
             <l-aframe-scene support-arjs>
-                <l-arjs-nft nft-url='${this.nftFilestem}'>
+                <l-arjs-nft nft-filestem='${this.nftFilestem}'>
                     <l-aframe-model
                         model-url='${this.modelUrl}'
                         model-scale='${this.modelScale}'
