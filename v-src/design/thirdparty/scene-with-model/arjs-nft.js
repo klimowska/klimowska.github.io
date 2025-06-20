@@ -1,9 +1,9 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import { importArjs } from '/v-src/vendor/import-aframe.js';
-import '/v-src/lib/path.js';
-import '/v-src/lib/validate.js';
+import { joinPaths } from '/v-src/lib/path.js';
+import { loggedValidate } from '/v-src/lib/validate.js';
 
-class ArjsNft extends LitElement {
+export class ArjsNft extends LitElement {
     static properties = {
         nftFilestem: { type: String },
     };

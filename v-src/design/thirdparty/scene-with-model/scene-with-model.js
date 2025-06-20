@@ -4,7 +4,7 @@ import '/v-src/design/thirdparty/scene-with-model/aframe-model.js';
 import '/v-src/design/thirdparty/scene-with-model/arjs-loader-screen.js';
 import '/v-src/design/thirdparty/scene-with-model/arjs-nft.js';
 
-class SceneWithModel extends LitElement {
+export class SceneWithModel extends LitElement {
     static properties = {
         nftFilestem: { type: String },
         modelUrl: { type: String },

@@ -1,7 +1,7 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import { importAframe } from '/v-src/vendor/import-aframe.js';
 
-class AframeModel extends LitElement {
+export class AframeModel extends LitElement {
     static properties = {
         modelUrl: { type: String },
         modelScale: { type: String },

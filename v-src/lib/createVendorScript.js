@@ -1,4 +1,4 @@
-const createVendorScript = (src, integrity) => {
+export const createVendorScript = (src, integrity) => {
     const providePromisesMap = () => 
         window._vendorScriptPromises ??= new Map();
     const promisesMap = providePromisesMap();

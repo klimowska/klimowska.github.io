@@ -1,8 +1,7 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import { importAframe } from '/v-src/vendor/import-aframe.js';
-import '/v-src/vendor/import-aframe.js';
 
-class AframeScene extends LitElement {
+export class AframeScene extends LitElement {
     static properties = {
         supportArjs: { type: Boolean },
     };
