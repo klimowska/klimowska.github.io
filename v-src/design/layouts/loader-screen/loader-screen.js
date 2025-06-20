@@ -13,16 +13,6 @@ export class LoaderScreen extends LitElement {
         }
     `;
 
-    connectedCallback() {
-        super.connectedCallback();
-        this.hideAfterLoaded();
-    }
-
-    hideAfterLoaded() {
-        window.addEventListener(
-            'arjs-nft-loaded', () => this.remove(), { once: true });
-    }
-
     render() {
         return html`<l-loader />`;
     }

@@ -6,26 +6,8 @@
     crossorigin="anonymous"></script>
 <script type="module">import '/v-src/design/thirdparty/loader-screen/loader-screen.js'; </script>
 
-<style>
-    .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
-
 <body style='margin : 0px; overflow: hidden;'>
     <l-loader-screen></l-loader-screen>
-    <!-- <div class="arjs-loader">
-        <image src="/v-src/assets/palette.svg" alt="loading" class="loader" />
-    </div> -->
     <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded
         arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
