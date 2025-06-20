@@ -17,6 +17,9 @@ export class ArjsNft extends LitElement {
     }
 
     get resolvedNftFilestem() {
+        if (!this.nftFilestem)
+            return '';
+
         if (this.nftFilestem.startsWith('/'))
             return this.nftFilestem;
 
