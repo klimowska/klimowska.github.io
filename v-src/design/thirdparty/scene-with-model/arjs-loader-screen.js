@@ -1,6 +1,6 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import '/v-src/design/layouts/loader-screen/loader-screen.js';
-import 'v-src/vendor/import-aframe.js';
+import '/v-src/vendor/import-aframe.js';
 
 export class ArjsLoaderScreen extends LitElement {
     connectedCallback() {
