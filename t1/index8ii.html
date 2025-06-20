@@ -1,0 +1,39 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/1.7.0/aframe.min.js"
+    integrity="sha512-QRe0tMdbQUsh9BJOh+ijnsJaLoO68ku2a9/7HmQCIvqpeWRkqc4Ee0Ohjvt6y7Fx/ShFTLoL/H3ZgxZrXB7ERA=="
+    crossorigin="anonymous"></script>
+<script src='https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.7/aframe/build/aframe-ar-nft.js'
+    integrity="sha384-hXOAn1AExl0RlIhkH9Y4Rerf6afiuZTCMPxETsZmarpSf7+jqsBbV8jq+XkP8KD+"
+    crossorigin="anonymous"></script>
+<script type="module">import '/v-src/design/thirdparty/loader-screen/loader-screen.js'; </script>
+
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body style='margin : 0px; overflow: hidden;'>
+    <l-loader-screen></l-loader-screen>
+    <!-- <div class="arjs-loader">
+        <image src="/v-src/assets/palette.svg" alt="loading" class="loader" />
+    </div> -->
+    <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded
+        arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
+        <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
+        <a-nft type='nft' url='t1/panieboze2' smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            <a-entity gltf-model='./panieboze2.glb' scale="1 1 1" position="0 0 0">
+            </a-entity>
+        </a-nft>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
