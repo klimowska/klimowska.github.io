@@ -2,7 +2,6 @@ import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import '/v-src/lib/path.js';
 import '/v-src/lib/validate.js';
 import '/v-src/vendor/import-arjs.js';
-import '/v-src/vendor/import-dompurify.js';
 
 class ArjsNft extends LitElement {
     static properties = {
@@ -15,7 +14,6 @@ class ArjsNft extends LitElement {
 
     async firstUpdated() {
         await importArjs();
-        await importDOMPurify();
     }
 
     get resolvedNftFilestem() {
