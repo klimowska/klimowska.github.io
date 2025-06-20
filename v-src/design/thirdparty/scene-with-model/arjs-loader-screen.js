@@ -8,13 +8,13 @@ export class ArjsLoaderScreen extends LitElement {
         this.hideAfterLoaded();
     }
 
+    async firstUpdated() {
+        await importArjs();
+    }
+
     hideAfterLoaded() {
         window.addEventListener(
             'arjs-nft-loaded', () => this.remove(), { once: true });
-    }
-
-    firstUpdated() {
-        await importArjs();
     }
 
     render() {

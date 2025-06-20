@@ -10,7 +10,7 @@ class AframeScene extends LitElement {
         return this;
     }
 
-    firstUpdated() {
+    async firstUpdated() {
         await importAframe();
     }
 
