@@ -3,26 +3,28 @@ import '/v-src/design/components/loader/loader.js';
 
 export class LoaderScreen extends LitElement {
     static styles = css`
-    .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        :host {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     `;
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.hideAfterLoaded();
+    }
+
+    hideAfterLoaded() {
+        window.addEventListener(
+            'arjs-nft-loaded', () => this.remove(), { once: true });
+    }
+
     render() {
-        return html`
-            <div class="arjs-loader">
-                <l-loader />
-            </div>
-        `;
+        return html`<l-loader />`;
     }
 }
 
