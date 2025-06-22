@@ -1,7 +1,8 @@
 const vendorScriptsPromises = new Map();
-console.log('createVendorScript', src);
+console.log('createVendorScript file');
 
 export const createVendorScript = (src, integrity) => {
+    console.log('createVendorScript()', src);
     // const providePromisesMap = () => 
     //     window._vendorScriptPromises ??= new Map();
     const promisesMap = vendorScriptsPromises;
