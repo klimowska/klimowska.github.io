@@ -3,7 +3,7 @@ import { importAframe } from '/v-src/vendor/import-aframe.js';
 import { importArjs } from '/v-src/vendor/import-arjs.js';
 
 import { renderAframeModel } from './aframe-model.js';
-import './aframe-scene.js';
+import { renderAframeScene } from './aframe-scene.js';
 import './arjs-loader-screen.js';
 import { renderArjsNft } from './arjs-nft.js';
 
@@ -29,14 +29,15 @@ export class SceneWithModel extends LitElement {
 
         return html`
             <l-arjs-loader-screen></l-arjs-loader-screen>
-            <l-aframe-scene support-arjs>
-                ${renderArjsNft(this.nftFilestem,
+            ${renderAframeScene(true, 
+                renderArjsNft(this.nftFilestem,
                     renderAframeModel(
                         this.modelUrl,
                         this.modelScale,
                         this.modelPosition,
                     )
-                )}
+                )
+            )}
             </l-aframe-scene>
         `;
     }
