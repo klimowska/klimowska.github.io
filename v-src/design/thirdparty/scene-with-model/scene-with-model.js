@@ -24,7 +24,7 @@ export class SceneWithModel extends LitElement {
         return this;
     }
 
-    console.log('pm_props', this.nftFilestem, this.modelUrl, this.modelScale, this.modelPosition,);
+    console.log('pm_props', this.nftFilestem, this.modelUrl, this.modelScale, this.modelPosition);
 
     render() {
         return html`
@@ -34,7 +34,7 @@ export class SceneWithModel extends LitElement {
                     renderAframeModel(
                         this.modelUrl,
                         this.modelScale,
-                        this.modelPosition,
+                        this.modelPosition
                     )
                 )}
             </l-aframe-scene>
