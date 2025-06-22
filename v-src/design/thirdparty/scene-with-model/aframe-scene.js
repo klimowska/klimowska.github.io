@@ -3,7 +3,7 @@ import { importAframe } from '/v-src/vendor/import-aframe.js';
 
 export class AframeScene extends LitElement {
     static properties = {
-        supportArjs: { type: Boolean },
+        supportArjs: { type: Boolean, attribute: 'support-arjs' },
     };
 
     createRenderRoot() {

@@ -9,10 +9,10 @@ import { renderArjsNft } from './arjs-nft.js';
 
 export class SceneWithModel extends LitElement {
     static properties = {
-        nftFilestem: { type: String },
-        modelUrl: { type: String },
-        modelScale: { type: String },
-        modelPosition: { type: String },
+        nftFilestem: { type: String, attribute: 'nft-filestem' },
+        modelUrl: { type: String, attribute: 'model-url' },
+        modelScale: { type: String, attribute: 'model-scale' },
+        modelPosition: { type: String, attribute: 'model-position' },
     };
 
     async firstUpdated() {

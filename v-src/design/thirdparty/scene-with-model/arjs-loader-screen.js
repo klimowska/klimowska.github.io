@@ -13,8 +13,9 @@ export class ArjsLoaderScreen extends LitElement {
     }
 
     hideAfterLoaded() {
+        const arjsLoadedEventType = 'arjs-nft-loaded';
         window.addEventListener(
-            'arjs-nft-loaded', () => this.remove(), { once: true });
+            arjsLoadedEventType, () => this.remove(), { once: true });
     }
 
     render() {
