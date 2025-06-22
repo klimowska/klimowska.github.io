@@ -1,7 +1,10 @@
+const vendorScriptsPromises = new Map();
+console.log('createVendorScript', src);
+
 export const createVendorScript = (src, integrity) => {
-    const providePromisesMap = () => 
-        window._vendorScriptPromises ??= new Map();
-    const promisesMap = providePromisesMap();
+    // const providePromisesMap = () => 
+    //     window._vendorScriptPromises ??= new Map();
+    const promisesMap = vendorScriptsPromises;
 
     const isImportNotInProgress = (k) => !promisesMap.has(k);
     const setImportInProgress = (k, v) => promisesMap.set(k, v);
