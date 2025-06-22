@@ -3,7 +3,7 @@ import { joinPaths } from '/v-src/lib/path.js';
 import { loggedValidate } from '/v-src/lib/validate.js';
 
 export function renderArjsNft(nftFilestem, children) {
-    function resolvedNftFilestem(nftFilestem) {
+    function resolveNftFilestem(nftFilestem) {
         if (!nftFilestem)
             return '';
 
@@ -17,7 +17,7 @@ export function renderArjsNft(nftFilestem, children) {
             : '';
     }
 
-    const resolvedNftFilestem = resolvedNftFilestem(nftFilestem);
+    const resolvedNftFilestem = resolveNftFilestem(nftFilestem);
     return html`
         <a-nft type='nft' url='${resolvedNftFilestem}'>
             ${children}
