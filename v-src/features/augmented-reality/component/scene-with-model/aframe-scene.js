@@ -22,7 +22,7 @@ export function renderAframeScene(supportArjs, children) {
             ]) : nothing,
         renderer: getAttributeValue([
             bigScaleDifferencesHelper ? 'logarithmicDepthBuffer: true;' : '',
-            renderPrecision ? `sourceType: ${renderPrecision};` : '',
+            renderPrecision ? `precision: ${renderPrecision};` : '',
             ]),
         xrModeUi: getAttributeValue([
             hideVrButton ? "enabled: false" : '',
