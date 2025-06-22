@@ -1,10 +1,11 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
 import { importAframe } from '/v-src/vendor/import-aframe.js';
 import { importArjs } from '/v-src/vendor/import-arjs.js';
-import '/v-src/design/thirdparty/scene-with-model/aframe-scene.js';
-import '/v-src/design/thirdparty/scene-with-model/aframe-model.js';
-import '/v-src/design/thirdparty/scene-with-model/arjs-loader-screen.js';
-import '/v-src/design/thirdparty/scene-with-model/arjs-nft.js';
+
+import { renderAframeModel } from './aframe-model.js';
+import './aframe-scene.js';
+import './arjs-loader-screen.js';
+import { renderArjsNft } from './arjs-nft.js';
 
 export class SceneWithModel extends LitElement {
     static properties = {
