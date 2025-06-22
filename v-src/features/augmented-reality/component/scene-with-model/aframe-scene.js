@@ -1,7 +1,5 @@
 import { html, nothing } from '/v-src/vendor/lit-core.min.js';
 
-export { getAttributeValue } from '../../lib/index.js';
-
 export function renderAframeScene(supportArjs, children) {
     const hideVrButton = true;
     const bigScaleDifferencesHelper = true;
