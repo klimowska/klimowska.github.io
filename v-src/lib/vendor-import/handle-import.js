@@ -1,4 +1,4 @@
-import { _importScript } from './_import-script.js'
+import { _importScript } from './import-script.js'
 
 export async function handleImport(src, integrity) {
     try {
