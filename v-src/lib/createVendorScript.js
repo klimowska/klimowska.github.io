@@ -1,20 +1,13 @@
-const vendorScriptsPromises = new Map();
-console.log('createVendorScript file', vendorScriptsPromises);
+const promisesMap = new Map();
+console.log('createVendorScript file', promisesMap);
 
 export const createVendorScript = (src, integrity) => {
-    console.log('createVendorScript()', src, vendorScriptsPromises);
-    // const providePromisesMap = () => 
-    //     window._vendorScriptPromises ??= new Map();
-    const promisesMap = vendorScriptsPromises;
-
-    const isImportNotInProgress = (k) => !promisesMap.has(k);
-    const setImportInProgress = (k, v) => promisesMap.set(k, v);
-
-    const createAndStartWait = (scriptElement) => 
-        new Promise((resolve, reject) => {
-            scriptElement.onload = resolve;
-            scriptElement.onerror = reject;
-        });
+    console.log('createVendorScript(src)', src);
+    const existingPromise = promisesMap.get(src);
+    const wasImportInitialized = !!existingPromise;
+    const createPromise = (f) => new Promise(f);
+    const setExistingPromise = (src, promise) => 
+        promisesMap.set(src, promise);
 
     const createScriptElement = (src, integrity) => {
         const scriptElement = document.createElement('script');
@@ -23,18 +16,26 @@ export const createVendorScript = (src, integrity) => {
         scriptElement.crossOrigin = 'anonymous';
         return scriptElement;
     };
-    const addScriptToHtml = (scriptElement) => 
+
+    const fullfillPromise = (resolve) => resolve();
+    const failPromise = (reject) => (promisesMap.delete(src), reject());
+
+    const addScript = (scriptElement) => 
         document.head.appendChild(scriptElement);
 
-    const importScriptOnlyOnce = (src, integrity) => {
-        if (isImportNotInProgress(src)) {
-            const scriptElement = createScriptElement(src, integrity);
-            const promise = createAndStartWait(scriptElement);
-            setImportInProgress(src, promise);
-            addScriptToHtml(scriptElement);
-        }
-        return promisesMap.get(src)
+    const importScript = (resolve, reject) => {
+        const scriptElement = createScriptElement(src, integrity);
+        scriptElement.onload = () => fullfillPromise(resolve);
+        scriptElement.onerror = () => failPromise(reject);
+        
+        addScript(scriptElement);
     };
 
-    return importScriptOnlyOnce(src, integrity);
+    if (wasImportInitialized) {
+        return existingPromise;
+    } else {
+        const promise = createPromise(importScript);
+        setExistingPromise(src, promise);
+        return promise;
+    }
 };
