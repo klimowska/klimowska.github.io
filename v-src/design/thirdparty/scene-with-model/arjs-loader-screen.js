@@ -1,15 +1,14 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
-import { importArjs } from '/v-src/vendor/import-arjs.js';
+import '/v-src/vendor/import-arjs.js';
+
 import '/v-src/design/layouts/loader-screen/loader-screen.js';
+
+await importArjs();
 
 export class ArjsLoaderScreen extends LitElement {
     connectedCallback() {
         super.connectedCallback();
         this.hideAfterLoaded();
-    }
-
-    async firstUpdated() {
-        await importArjs();
     }
 
     hideAfterLoaded() {

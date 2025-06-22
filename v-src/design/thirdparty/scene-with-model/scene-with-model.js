@@ -1,6 +1,6 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
-import { importAframe } from '/v-src/vendor/import-aframe.js';
-import { importArjs } from '/v-src/vendor/import-arjs.js';
+import '/v-src/vendor/import-aframe.js';
+import '/v-src/vendor/import-arjs.js';
 
 import { renderAframeModel } from './aframe-model.js';
 import { renderAframeScene } from './aframe-scene.js';
@@ -14,11 +14,6 @@ export class SceneWithModel extends LitElement {
         modelScale: { type: String, attribute: 'model-scale' },
         modelPosition: { type: String, attribute: 'model-position' },
     };
-
-    async firstUpdated() {
-        await importAframe();
-        await importArjs();
-    }
 
     createRenderRoot() {
         return this;
