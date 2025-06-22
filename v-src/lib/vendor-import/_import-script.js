@@ -1,9 +1,9 @@
 const promisesMap = new Map();
 let importQueuePromise = Promise.resolve();
-console.log('createVendorScript file', promisesMap);
+console.log('importScript file', promisesMap);
 
-export const createVendorScript = (src, integrity) => {
-    console.log('createVendorScript(src)', src);
+export const _importScript = (src, integrity) => {
+    console.log('importScript(src)', src);
     const existingPromise = promisesMap.get(src);
     const wasImportInitialized = !!existingPromise;
     const setExistingPromise = (src, promise) => 
@@ -37,7 +37,7 @@ export const createVendorScript = (src, integrity) => {
         return existingPromise;
     } else {
         importQueuePromise = importQueuePromise.then(promiseImportScript);
-        setExistingPromise(src, promise);
+        setExistingPromise(src, importQueuePromise);
         return importQueuePromise;
     }
 };
