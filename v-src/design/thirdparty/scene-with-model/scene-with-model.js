@@ -1,4 +1,6 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
+import { importAframe } from '/v-src/vendor/import-aframe.js';
+import { importArjs } from '/v-src/vendor/import-arjs.js';
 import '/v-src/design/thirdparty/scene-with-model/aframe-scene.js';
 import '/v-src/design/thirdparty/scene-with-model/aframe-model.js';
 import '/v-src/design/thirdparty/scene-with-model/arjs-loader-screen.js';
@@ -12,17 +14,26 @@ export class SceneWithModel extends LitElement {
         modelPosition: { type: String },
     };
 
+    async firstUpdated() {
+        await importAframe();
+        await importArjs();
+    }
+
+    createRenderRoot() {
+        return this;
+    }
+
     render() {
         return html`
             <l-arjs-loader-screen></l-arjs-loader-screen>
             <l-aframe-scene support-arjs>
-                <l-arjs-nft nft-filestem='${this.nftFilestem}'>
-                    <l-aframe-model
-                        model-url='${this.modelUrl}'
-                        model-scale='${this.modelScale}'
-                        model-position='${this.modelPosition}'>
-                    </l-aframe-model>
-                </l-arjs-nft>
+                ${renderArjsNft(this.nftFilestem,
+                    renderAframeModel(
+                        this.modelUrl,
+                        this.modelScale,
+                        this.modelPosition,
+                    )
+                )}
             </l-aframe-scene>
         `;
     }

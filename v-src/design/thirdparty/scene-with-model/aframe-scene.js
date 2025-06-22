@@ -25,3 +25,13 @@ export class AframeScene extends LitElement {
 };
 
 customElements.define('l-aframe-scene', AframeScene);
+
+// export function renderAframeScene(supportArjs, children) {
+//     return html`
+//         <a-scene ?arjs=${supportArjs}>
+//             ${children}
+//             <a-entity camera></a-entity>
+//         </a-scene>
+
+//     `
+// }
