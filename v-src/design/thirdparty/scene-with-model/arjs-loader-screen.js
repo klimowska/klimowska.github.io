@@ -3,8 +3,6 @@ import '/v-src/vendor/import-arjs.js';
 
 import '/v-src/design/layouts/loader-screen/loader-screen.js';
 
-await importArjs();
-
 export class ArjsLoaderScreen extends LitElement {
     connectedCallback() {
         super.connectedCallback();
