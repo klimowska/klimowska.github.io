@@ -24,6 +24,8 @@ export class SceneWithModel extends LitElement {
         return this;
     }
 
+    console.log('pm_props', this.nftFilestem, this.modelUrl, this.modelScale, this.modelPosition,);
+
     render() {
         return html`
             <l-arjs-loader-screen></l-arjs-loader-screen>
