@@ -1,11 +1,11 @@
 const promisesMap = new Map();
+let importQueuePromise = Promise.resolve();
 console.log('createVendorScript file', promisesMap);
 
 export const createVendorScript = (src, integrity) => {
     console.log('createVendorScript(src)', src);
     const existingPromise = promisesMap.get(src);
     const wasImportInitialized = !!existingPromise;
-    const createPromise = (f) => new Promise(f);
     const setExistingPromise = (src, promise) => 
         promisesMap.set(src, promise);
 
@@ -17,13 +17,13 @@ export const createVendorScript = (src, integrity) => {
         return scriptElement;
     };
 
-    const fullfillPromise = (resolve) => resolve();
-    const failPromise = (reject) => (promisesMap.delete(src), reject());
-
     const addScript = (scriptElement) => 
         document.head.appendChild(scriptElement);
-
+    
     const importScript = (resolve, reject) => {
+        const fullfillPromise = (resolve) => resolve();
+        const failPromise = (reject) => (promisesMap.delete(src), reject());
+
         const scriptElement = createScriptElement(src, integrity);
         scriptElement.onload = () => fullfillPromise(resolve);
         scriptElement.onerror = () => failPromise(reject);
@@ -31,11 +31,13 @@ export const createVendorScript = (src, integrity) => {
         addScript(scriptElement);
     };
 
+    const promiseImportScript = () => new Promise(importScript);
+
     if (wasImportInitialized) {
         return existingPromise;
     } else {
-        const promise = createPromise(importScript);
+        importQueuePromise = importQueuePromise.then(promiseImportScript);
         setExistingPromise(src, promise);
-        return promise;
+        return importQueuePromise;
     }
 };
