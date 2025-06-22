@@ -1,5 +1,5 @@
 import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
-import '/v-src/vendor/import-arjs.js';
+// import '/v-src/vendor/import-arjs.js';
 
 import { joinPaths } from '/v-src/lib/path.js';
 import { loggedValidate } from '/v-src/lib/validate.js';
