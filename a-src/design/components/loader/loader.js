@@ -1,5 +1,7 @@
 import { html, css, LitElement } from '/a-src/vendor/lit-core.min.js'
 
+const pallete_svg = '/a-src/assets/palette.svg'
+
 export class Loader extends LitElement {
     static styles = css`
         @keyframes rotating {
@@ -18,7 +20,7 @@ export class Loader extends LitElement {
 
     render() {
         return html`
-            <image src="/v-src/assets/palette.svg" alt="loading" class="loader" />
+            <image src="${pallete_svg}" alt="loading" class="loader" />
         `;
     }
 }
