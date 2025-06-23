@@ -13,6 +13,7 @@ export class AugmentedRealityViewer extends LitElement {
     modelUrl: { type: String, attribute: "model-url" },
     modelScale: { type: String, attribute: "model-scale" },
     modelPosition: { type: String, attribute: "model-position" },
+    animate: { type: Boolean, converter: (v) => v === "active" },
   };
 
   createRenderRoot() {
@@ -27,9 +28,11 @@ export class AugmentedRealityViewer extends LitElement {
         renderArjsNft(
           this.nftFilestem,
           renderAframeModel(
-            this.modelUrl, 
-            this.modelScale, 
-            this.modelPosition)
+            this.modelUrl,
+            this.modelScale,
+            this.modelPosition,
+            this.animate
+          )
         )
       )}
       </l-aframe-scene>
