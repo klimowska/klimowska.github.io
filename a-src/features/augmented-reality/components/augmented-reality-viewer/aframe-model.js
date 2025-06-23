@@ -1,5 +1,5 @@
 import { html } from "/a-src/vendor/lit/index.js";
-// import "/a-src/vendor/aframe/import.js";
+import "/a-src/vendor/aframe/index.js";
 
 export function renderAframeModel(
   modelUrl,

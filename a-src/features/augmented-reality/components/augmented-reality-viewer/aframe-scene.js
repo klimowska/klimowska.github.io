@@ -1,5 +1,5 @@
 import { html, nothing } from "/a-src/vendor/lit/index.js";
-// import "/a-src/vendor/aframe/import.js";
+import "/a-src/vendor/aframe/index.js";
 
 import { getAttributeValue } from "../../utils/index.js";
 

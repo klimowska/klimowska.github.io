@@ -1,5 +1,5 @@
 import { html } from "/a-src/vendor/lit/index.js";
-// import "/a-src/vendor/arjs/import.js";
+import "/a-src/vendor/arjs/index.js";
 
 import { resolveNftFilestem } from "../../utils/index.js";
 
