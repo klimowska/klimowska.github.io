@@ -1,6 +1,6 @@
-import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
-import '/v-src/vendor/import-aframe.js';
-import '/v-src/vendor/import-arjs.js';
+import { html, LitElement } from '/a-src/vendor/lit-core.min.js';
+import '/a-src/vendor/import-aframe.js';
+import '/a-src/vendor/import-arjs.js';
 
 import { renderAframeModel } from './aframe-model.js';
 import { renderAframeScene } from './aframe-scene.js';

@@ -1,6 +1,6 @@
-import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
+import { html } from '/a-src/vendor/lit-core.min.js';
 
-import { joinPaths, loggedValidate } from '/v-src/features/augmented-reality/lib/index.js';
+import { joinPaths, loggedValidate } from '/a-src/features/augmented-reality/lib/index.js';
 
 export function renderArjsNft(nftFilestem, children) {
     const enableCameraSmoothing = true;

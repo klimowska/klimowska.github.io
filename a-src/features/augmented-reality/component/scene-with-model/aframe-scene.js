@@ -1,4 +1,4 @@
-import { html, nothing } from '/v-src/vendor/lit-core.min.js';
+import { html, nothing } from '/a-src/vendor/lit-core.min.js';
 
 export function renderAframeScene(supportArjs, children) {
     const hideVrButton = true;

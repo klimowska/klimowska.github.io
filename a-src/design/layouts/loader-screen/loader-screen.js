@@ -1,5 +1,6 @@
-import { html, css, LitElement } from '/v-src/vendor/lit-core.min.js';
-import '/v-src/design/components/loader/loader.js';
+import { html, css, LitElement } from '/a-src/vendor/lit-core.min.js';
+
+import '/a-src/design/components/loader/loader.js';
 
 export class LoaderScreen extends LitElement {
     static styles = css`
