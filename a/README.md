@@ -7,3 +7,4 @@
 - **Meble** [scene](25p2meble) [nft](25p2meble/nft.png)
 - **RR** [scene](25p2rr) [nft](25p2rr/nft.png)
 - **Servomuxo** [scene](25p2servomuxo) [nft](25p2servomuxo/nft.png)
+- **test1bmsn** [scene](25p2test1bmsn) [nft](25p2test1bmsn/nft.png)
