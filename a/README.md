@@ -1,4 +1,4 @@
 # Augmented reality
 
-- **Servomuxo** [scene](25p2krioteratia) [nft](25p2krioteratia/nft.png)
+- **Krioterapia** [scene](25p2krioterapia) [nft](25p2krioterapia/nft.png)
 - **Servomuxo** [scene](25p2servomuxo) [nft](25p2servomuxo/nft.png)
