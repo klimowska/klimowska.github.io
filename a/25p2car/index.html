@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR viewer by Klimowska</title>
+    <script type="module">
+      import "/a-src/features/augmented-reality/index.js";
+    </script>
+  </head>
+  <body>
+    <!-- nft creator: https://klimowska.github.io/a/nft -->
+    <l-augmented-reality-viewer
+      nft-filestem="nft"
+      model-url="./model.glb"
+      model-scale="1 1 1"
+      model-position="150 300 -100"
+      animate="inactive"
+    >
+    </l-augmented-reality-viewer>
+  </body>
+</html>
